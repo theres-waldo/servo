@@ -174,7 +174,7 @@ def _activate_virtualenv(topdir, is_firefox):
         if not pip:
             sys.exit("Python pip is either not installed or not found in virtualenv.")
 
-        process = Popen([pip, "install", "-q", "-I", "-U", "pip"], stdout=PIPE, stderr=PIPE)
+        process = Popen([pip, "install", "-I", "-U", "pip"], stdout=PIPE, stderr=PIPE)
         process.wait()
         if process.returncode:
             out, err = process.communicate()
@@ -196,7 +196,7 @@ def _activate_virtualenv(topdir, is_firefox):
         if not pip:
             sys.exit("Python pip is either not installed or not found in virtualenv.")
 
-        process = Popen([pip, "install", "-q", "-I", "-r", req_path], stdout=PIPE, stderr=PIPE)
+        process = Popen([pip, "install", "-I", "-r", req_path], stdout=PIPE, stderr=PIPE)
         process.wait()
         if process.returncode:
             out, err = process.communicate()
